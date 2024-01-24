@@ -13,6 +13,8 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, G
 ### DEMONSTRATION
 - Some GPT4 logic upon exporting Psd1 files...
 ```
+*NEW SESSION*
+
 WT:
 Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, is this, true or false?
 
