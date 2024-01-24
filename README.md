@@ -8,7 +8,7 @@ Development. The principles are...
 - we want them to utilize exactly the same, syntax and usage, for import, and a fitting theme of, syntax and usage, for the export, compared to the powershell import. 
 
 ## DESCRIPTION
-Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, GPT4 typically insists there is "GPT: The statement is false. Both PowerShell and PowerShell Core do include the Export-PowerShellDataFile cmdlet.", therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then this will happen, wasting multiple frustrating interactions, hence, I wanted to solve that issue, and not only that, fix the issue of incorrectly reading/writing to PSD1's with quality, import and export, cmdlets, I can rely upon and are efficient, hence, "Wiseman-Timelord's Import Export Psd1" cmdlets were created for exactly this purpose. 
+Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, GPT4 typically insists there is "GPT: The statement is false. Both PowerShell and PowerShell Core do include the Export-PowerShellDataFile cmdlet.", therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then this will happen, wasting multiple frustrating interactions, hence, I wanted to solve that issue, and not only that, fix the issue of incorrectly reading/writing to PSD1's with, import and export, cmdlets, I can rely upon and are efficient, hence, "Wiseman-Timelord's Import Export Psd1" cmdlets were created for exactly this purpose. 
 
 ### DEMONSTRATION
 - Some GPT4 logic upon exporting Psd1 files (in a new session - 2024/01/24)...
