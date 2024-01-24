@@ -35,14 +35,14 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 - There will be an ingenious batch installer, for the cmdlets, they will be in a module.
 - There will also be a script with 2 functions for this purpose.
 - The import will work the same.
-- The export will work as one would logically expect...
+- The export will work as GPT hallucinated it would...
 ```
 $data = @{
     Setting1 = 'Value1'
     Setting2 = 'Value2'
 }
 
-$data = Export-PowerShellDataFile -Path 'C:\path\to\your\file.psd1'
+$data | *CmdletName* -Path 'C:\path\to\your\file.psd1'
 ```
 
 ## DISCLAIMER
