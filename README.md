@@ -17,20 +17,7 @@ WT:
 Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, is this, true or false?
 
 GPT4:
-The statement is false. Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet. This cmdlet is used to export a hash table or a PSCustomObject to a PowerShell data file (*.psd1). The data file created by this cmdlet can be used in PowerShell scripts and modules to store data like configuration settings.
-
-Here's a basic example of how you might use `Export-PowerShellDataFile`:
-
-# Create a hash table
-$data = @{
-    Setting1 = 'Value1'
-    Setting2 = 'Value2'
-}
-
-# Export the hash table to a PowerShell data file
-$data | Export-PowerShellDataFile -Path 'C:\path\to\your\file.psd1'
-
-This will create a file at the specified path containing the data from the hash table in a format that is easily readable and importable by PowerShell.
+The statement is false. Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet.
 ```
 
 ## USAGE
