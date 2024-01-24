@@ -36,13 +36,14 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 - There will also be a script with 2 functions for this purpose.
 - The import will work the same.
 - The export will work as one would logically expect...
-
+```
 $data = @{
     Setting1 = 'Value1'
     Setting2 = 'Value2'
 }
-# Export the hash table to a PowerShell data file
+
 $data = Export-PowerShellDataFile -Path 'C:\path\to\your\file.psd1'
+```
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
