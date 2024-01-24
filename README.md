@@ -1,5 +1,7 @@
 # WtImpExpPsd1-Cl
-Under Development. The principles are...
+
+### STATUS: DEVELOPMENT
+The principles are...
 - focus on, competence and reliability and efficiency, but do not introduce "security".
 - ensure the cmdlets work for, "PowerShell Core 7" and "Powershell 5.1", ensure everything is compatible.
 - we ideally want them to work more, competently and faster, than the PowerShell/PowerShellCore versions of the relating cmdlets.
@@ -30,3 +32,10 @@ $data | Export-PowerShellDataFile -Path 'C:\path\to\your\file.psd1'
 
 This will create a file at the specified path containing the data from the hash table in a format that is easily readable and importable by PowerShell.
 ```
+
+## USAGE
+- There will be an ingenious batch installer, they will be in a module.
+- The import will work the same.
+- The export will work as one would logically expect.
+
+
