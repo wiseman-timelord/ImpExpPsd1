@@ -19,6 +19,17 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, i
 GPT4:
 The statement is false. Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet.
 ```
+- Standard Psd1 import has issues...
+```
+WT:
+Please tell me about the, limitations and issues, of Import-PowerShellDataFile.
+
+GPT4: 
+Formatting Errors: The most common issue arises from improperly formatted .psd1 files. If the syntax within the file is not correct, the cmdlet will fail to parse the data.
+Incorrect Path: Issues can arise if the file path is incorrect or inaccessible due to permission restrictions.
+Handling Complex Data: While it can import nested hashtables or custom objects, the complexity of the data structure can lead to confusion or errors in interpretation.
+Character Encoding: If the file’s character encoding is not compatible with PowerShell’s expected encoding, it may lead to errors or incorrect data import.
+```
 
 ## USAGE
 - There will be an ingenious batch installer, they will be in a module.
