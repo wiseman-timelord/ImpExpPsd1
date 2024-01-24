@@ -1,4 +1,4 @@
-# ImpExpPsd1-ClPs
+# ImpExpPsd1-Cl
 
 ### STATUS
 Development. The principles are...
@@ -8,7 +8,7 @@ Development. The principles are...
 - we want them to utilize exactly the same, syntax and usage, for import, and a fitting theme of, syntax and usage, for the export, compared to the powershell import. 
 
 ## DESCRIPTION
-Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, GPT4 typically insists there is "GPT: The statement is false. Both PowerShell and PowerShell Core do include the Export-PowerShellDataFile cmdlet.", therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then this will happen, wasting multiple frustrating interactions, hence, I wanted to solve that issue, and not only that, fix the issue of incorrectly reading/writing to PSD1's with, import and export, cmdlets, I can rely upon and are efficient, hence, "Import Export Psd1", cmdlets and script, were created for exactly this purpose. There is a Export-PowerShellDataFile on GitHub, however, mine will be the BESTEST and I made mine before finding theirs.
+Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then it will cause a series of different errors in development to happen, that are frustrating interactions if you intend to use Psd1, hence, I wanted to solve that issue, and not only that, but produce upgrades in the process. ImpExpPsd1-Cl will fix the issue of incorrectly reading/writing to PSD1's with perfected, import and export, cmdlets, that are, robust and efficient, hence, "Import Export Psd1", cmdlets, were created for exactly this purpose. There is a "Export-PowerShellDataFile" on GitHub, however, mine will be, better than, that and the standard "Import-PowerShellDataFile" cmdlet.
 
 ### DEMONSTRATION
 - Some GPT4 logic upon exporting Psd1 files (in a new session - 2024/01/24)...
@@ -32,15 +32,14 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 ```
 
 ## USAGE
-- There will be an ingenious batch installer, for the cmdlets, they will be in a module.
-- There will also be a script with 2 functions for this purpose.
-- The import will work the same.
+- There will be an installer for the cmdlets, they will be in a module.
+- The, syntax and usage, of the import will work the same...
 ```
 $ConfigData = Import-PowerShellDataFile -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
 ```
-- The export will work as GPT hallucinated it would...
+- The, syntax and usage, of the export will work as GPT hallucinated it would...
 ```
 $data = @{
     Setting1 = 'Value1'
