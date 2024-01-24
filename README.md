@@ -17,7 +17,8 @@ WT:
 Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, is this, true or false?
 
 GPT4:
-The statement is false. Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet.
+The statement is false. Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet...
+...
 ```
 - Standard Psd1 import has issues...
 ```
