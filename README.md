@@ -51,7 +51,7 @@ $data | Export-PowerShellDataFile -Path 'C:\path\to\your\file.psd1'
 ```
 
 ### NOTATION
-- The other dudes export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/).
+- The other dudes export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
