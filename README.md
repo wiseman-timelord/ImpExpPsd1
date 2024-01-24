@@ -35,6 +35,11 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 - There will be an ingenious batch installer, for the cmdlets, they will be in a module.
 - There will also be a script with 2 functions for this purpose.
 - The import will work the same.
+```
+$ConfigData = Import-PowerShellDataFile -Path "C:\path\to\config.psd1"
+
+$Setting1Value = $ConfigData.Setting1
+```
 - The export will work as GPT hallucinated it would...
 ```
 $data = @{
@@ -42,8 +47,11 @@ $data = @{
     Setting2 = 'Value2'
 }
 
-$data | *CmdletName* -Path 'C:\path\to\your\file.psd1'
+$data | Export-PowerShellDataFile -Path 'C:\path\to\your\file.psd1'
 ```
+
+### NOTATION
+- The other dudes export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/).
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
