@@ -32,14 +32,13 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 ```
 
 ## USAGE
-- There will be an installer for the cmdlets, they will be in a module.
-- The, syntax and usage, of the import will work the same...
+- The, syntax and usage, of the import will work the same, hence, you just need to swap the cmdlet names...
 ```
 $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
 ```
-- The, syntax and usage, of the export will work as GPT hallucinated it would...
+- The, syntax and usage, of the export is as GPT hallucinated it, hence, you just need to swap the cmdlet names...
 ```
 $data = @{
     Setting1 = 'Value1'
