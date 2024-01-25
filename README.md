@@ -33,15 +33,14 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 
 ## USAGE
 1. Install/Import the, script or module or cmdlet. 
-2. Depend on the circumstance...
-- If you are writing the code, then take a look at the, usage and syntax, below, and implement it like that.
-- For existing code, the, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names...
+2. Depend on the circumstance...The, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names. For export, the, syntax and usage, of the export is as GPT hallucinated it to be. Thus, for existing code created with GPT4, probably just swap the cmdlet names.
+- Import...
 ```
 $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
 ```
-- For existing code, the, syntax and usage, of the export is as GPT hallucinated it to be, hence, for GPT programming probably just swap the cmdlet names...
+- Export...
 ```
 $data = @{
     Setting1 = 'Value1'
