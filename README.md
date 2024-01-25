@@ -1,7 +1,7 @@
 # ImpExpPsd1-ClPs
 
 ### STATUS
-Development. The principles are...
+Development. Early version, do not use. The principles are...
 - focus on, competence and reliability and efficiency, but do not introduce "security".
 - ensure the cmdlets work for, "PowerShell Core 7" and "Powershell 5.1", ensure everything is compatible.
 - we ideally want them to work more, competently and faster, than the PowerShell/PowerShellCore versions of the relating cmdlets.
