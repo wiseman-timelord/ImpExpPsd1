@@ -36,7 +36,7 @@ Handling Complex Data: While it can import nested hashtables or custom objects, 
 - There will be an installer for the cmdlets, they will be in a module.
 - The, syntax and usage, of the import will work the same...
 ```
-$ConfigData = WtImp-PowerShellData1 -Path "C:\path\to\config.psd1"
+$ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
 ```
@@ -47,7 +47,7 @@ $data = @{
     Setting2 = 'Value2'
 }
 
-$data | WtExp-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
+$data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
 ```
 
 ### NOTATION
