@@ -54,6 +54,6 @@ $data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
 - The other dudes export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
 
 ## DISCLAIMER
-This software is not subject to the terms in my typically supplied License.Txt, as it is NOT an actual program. I want users to use these files HOWEVER they want, I am just trying to fix a blatant FATAL ERROR in PowerShell/PowerShellCore.
+This software is not subject to the terms in my typically supplied License.Txt, as it is NOT an actual program. I want users to use these files HOWEVER they want, I am just trying to fix a blatant FATAL ERROR in PowerShell/PowerShellCore. Obviously if your computer blows up, then you must accept, that is more likely to be the box of TNT yer left on top of it.
 
 
