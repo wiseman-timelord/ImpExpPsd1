@@ -38,7 +38,7 @@ $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
 ```
-- The, syntax and usage, of the export is as GPT hallucinated it, hence, you just need to swap the cmdlet names...
+- The, syntax and usage, of the export is as GPT hallucinates it, hence, you should just need to swap the cmdlet names...
 ```
 $data = @{
     Setting1 = 'Value1'
