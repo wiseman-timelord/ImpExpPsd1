@@ -7,7 +7,7 @@
 # Import-Module .\modules\impexppsd1
 #
 # Import Syntax:
-# $ConfigData = WtImp-PowerShellData1 -Path "C:\path\to\config.psd1"
+# $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 #
 # Import Usage:
 # $Setting1Value = $ConfigData.Setting1
@@ -19,9 +19,9 @@
 # }
 #
 # Export Usage:
-# $data | WtExp-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
+# $data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
 
-function WtImp-PowerShellData1 {
+function Import-PowerShellData1 {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true)]
@@ -32,7 +32,7 @@ function WtImp-PowerShellData1 {
     Invoke-Expression $content
 }
 
-function WtExp-PowerShellData1 {
+function Export-PowerShellData1 {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
@@ -69,4 +69,4 @@ function WtExp-PowerShellData1 {
     }
 }
 
-Export-ModuleMember -Function WtImp-PowerShellData1, WtExp-PowerShellData1
+Export-ModuleMember -Function Import-PowerShellData1, Export-PowerShellData1
