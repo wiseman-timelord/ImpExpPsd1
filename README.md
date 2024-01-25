@@ -2,8 +2,7 @@
 
 ### STATUS
 Development. Early version, do not use. The principles are...
-- focus on, competence and reliability and efficiency, but do not introduce "security".
-- ensure the cmdlets work for, "PowerShell Core 7" and "Powershell 5.1", ensure everything is compatible.
+- Testing, ensure the cmdlets work for, "PowerShell Core 7" and "Powershell 5.1", ensure everything is compatible.
 - we ideally want them to work more, competently and faster, than the PowerShell/PowerShellCore versions of the relating cmdlets.
 - we want them to utilize exactly the same, syntax and usage, for import, and a fitting theme of, syntax and usage, for the export, compared to the powershell import.
 - after the modules/scripts have been, tested and improved, though use in my programs, they will be converted to c# cmdlets, and put here also "https://www.powershellgallery.com/packages/". 
