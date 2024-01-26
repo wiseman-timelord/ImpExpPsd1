@@ -10,7 +10,7 @@ Development. Early version, do not use. The principles are...
 - While working on the Powershell based AI LLM thing, consider including pipeline support for multi-window interface, and test. It would also change the usage & syntax. 
 
 ## DESCRIPTION
-Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then it will cause a series of different errors in development to happen, that are frustrating interactions if you intend to use Psd1, hence, I wanted to solve that issue, and not only that, but produce upgrades in the process. ImpExpPsd1-Cl will fix the issue of incorrectly reading/writing to PSD1's with perfected, import and export, functions and cmdlets, that are, robust and efficient, hence, "Import Export Psd1", functions (cmdlets later too) was created for exactly this purpose.
+Powershell and PowerShellCore do not have an, Export-PowerShellDataFile cmdlet and require an additional function for boolean conversion for the Import-PowerShellDataFile, therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then it will cause a series of different errors in development to happen, that are frustrating interactions if you intend to use Psd1, hence, I wanted to solve that issue, and not only that, but produce upgrades in the process. ImpExpPsd1-Cl will fix the issue of incorrectly reading/writing to PSD1's with somewhat perfected, import and export, functions and cmdlets, that are, robust and efficient, hence, "Import Export Psd1", functions (cmdlets later too) was created for exactly this purpose.
 
 ### FEATURES
 - **Standard Features**: The features you find in the built-in import function, including, hashtables, strings, booleans, arrays. 
@@ -67,6 +67,6 @@ Options:
 - GPT4: "While Export-PowerShellDataFile can import nested hashtables or custom objects, the complexity of the data structure can lead to confusion or errors in interpretation."
 
 ## DISCLAIMER
-This software is not subject to the terms in my typically supplied License.Txt, as it is NOT an actual program. I want users to use these files HOWEVER they want, I am just trying to fix a blatant FATAL ERROR in PowerShell/PowerShellCore. Obviously if your computer blows up, then you must accept, that is more likely to be the box of TNT yer left on top of it.
+This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
 
 
