@@ -20,14 +20,15 @@
 
 # Function Import Psd1
 function Import-PowerShellData1 {
-    [CmdletBinding()]
     param (
-        [Parameter(Mandatory = $true)]
         [string]$Path
     )
-
     $content = Get-Content -Path $Path -Raw
-    Invoke-Expression $content
+    $content = $content -replace '\bTrue\b', '$true' -replace '\bFalse\b', '$false'
+    $scriptBlock = [scriptblock]::Create($content)
+    $data = . $scriptBlock
+
+    return $data
 }
 
 # Function Export Psd1
@@ -47,8 +48,8 @@ function Export-PowerShellData1 {
             switch ($Value) {
                 { $_ -is [System.Collections.Hashtable] } {
                     "@{" + ($Value.GetEnumerator() | ForEach-Object {
-                        "$($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
-                    }) -join "; " + "}"
+                        "`n    $($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
+                    }) -join ";" + "`n}" + "`n"
                 }
                 { $_ -is [System.Collections.IEnumerable] -and $_ -isnot [string] } {
                     "@(" + ($Value | ForEach-Object {
@@ -56,14 +57,16 @@ function Export-PowerShellData1 {
                     }) -join ", " + ")"
                 }
                 { $_ -is [string] } { "`"$Value`"" }
-                default { $_ }
+                { $_ -is [int] -or $_ -is [long] -or $_ -is [bool] -or $_ -is [double] -or $_ -is [decimal] } { $_ }
+                default { "`"$Value`"" }
             }
         }
 
         $psd1Content = "@{" + ($Data.GetEnumerator() | ForEach-Object {
             "`n    $($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
-        }) -join "" + "`n}"
+        }) -join ";" + "`n" + "}"
 
         Set-Content -Path $Path -Value $psd1Content -Force
     }
 }
+
