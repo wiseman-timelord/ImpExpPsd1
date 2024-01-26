@@ -37,6 +37,7 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, t
 1. Install/Import the, script or cmdlet. 
 2. Depend on the circumstance...The, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names, but, for export the, syntax and usage is similar as GPT hallucinated it to be, but without pipeline, as shown below.
 - Import, syntax and usage...
+```
 $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
@@ -49,11 +50,13 @@ $data = @{
 }
 
 Export-PowerShellData1 -Data $data -Path 'C:\path\to\your\file.psd1'
-or
+
+...or for a global containing the hashtable...
+
 Export-PowerShellData1 -Data $Global:Config -Path "C:\path\to\your\file.psd1"
 
 Options:
--Name (comment the name of the file, extracted from -Path details).
+-Name (comment name of file, extracted from -Path detail).
 ```
 
 ### NOTATION
