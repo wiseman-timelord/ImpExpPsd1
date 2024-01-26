@@ -12,7 +12,7 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, t
 
 ### FEATURES
 - **Standard Features**: The features you find in the built-in import function, including, hashtables, strings, booleans, arrays. 
-- **Additional Features**: Features you always wanted, comment adding/handling, automatic true/false to boolean converstion, nested object handling, internal convert to psd1 format, improved string handling.
+- **Additional Features**: The features you always wanted...comment adding/handling, automatic true/false to boolean converstion, nested object handling, internal convert to psd1 format, improved string handling.
 
 ### Preview
 - Example psd1 file (when using the -Name argument)...
