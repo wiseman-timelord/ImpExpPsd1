@@ -56,7 +56,7 @@ $data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
 
 Options...
 -Name (comment "# Script: file.psd1", extracted from -Path detail).
-...
+```
 
 ### NOTATION
 - There is a "Export-PowerShellDataFile" on GitHub, however, mine will be, better than, that cmdlet and the standard "Import-PowerShellDataFile" cmdlet. The GitHub export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
