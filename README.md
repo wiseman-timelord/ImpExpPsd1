@@ -20,13 +20,13 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, t
 # Script: settings.psd1
 
 @{
-    ArchiveMultithreading = True 
-    UserPreviousScore = "0" 
-    ProcessCharacterTextures = False 
-    GpuCardSelectionNumber = 1 
-    DataFolderLocation = "C:\Program Files (x86)\Steam\steamapps\common\Fallout 4\data" 
-    TargetResolution = 2048 
-    UserCurrentLowScore = "0" 
+    ArchiveMultithreading = $true
+    UserPreviousScore = "0"
+    ProcessCharacterTextures = $false
+    GpuCardSelectionNumber = 1
+    DataFolderLocation = "C:\Program Files (x86)\Steam\steamapps\common\Fallout 4\data"
+    TargetResolution = 2048
+    UserCurrentLowScore = "0"
     UserCurrentHighScore = "0"
 }
 ```
