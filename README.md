@@ -7,7 +7,7 @@ Development. Early version, do not use. The principles are...
 - Keep things fast, no security or error handling, the data will be trusted to be, correct from the export and safe (non-executable) from the relating program.
 - we want them to utilize exactly the same, syntax and usage, for import, and a fitting theme of, syntax and usage, for the export, compared to the built-in powershell import.
 - after the scripts have been, tested and improved, though use in my programs (starting with [BethScale](https://github.com/wiseman-timelord/DdsBethScale-PsWhile)), then functions will be converted to c# cmdlets, and additionally put on [PowerShellGallery](https://www.powershellgallery.com/packages/). 
-- While working on the Powershell based AI LLM thing, consider including pipeline support for multi-window interface, and test. 
+- While working on the Powershell based AI LLM thing, consider including pipeline support for multi-window interface, and test. It would also change the usage & syntax. 
 
 ## DESCRIPTION
 Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then it will cause a series of different errors in development to happen, that are frustrating interactions if you intend to use Psd1, hence, I wanted to solve that issue, and not only that, but produce upgrades in the process. ImpExpPsd1-Cl will fix the issue of incorrectly reading/writing to PSD1's with perfected, import and export, functions and cmdlets, that are, robust and efficient, hence, "Import Export Psd1", functions (cmdlets later too) was created for exactly this purpose.
@@ -35,23 +35,25 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, t
 
 ## USAGE
 1. Install/Import the, script or cmdlet. 
-2. Depend on the circumstance...The, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names. For export, the, syntax and usage, of the export is as GPT hallucinated it to be, so under such circumstances, it may again be a case of swapping function/cmdlet names. Additionally the user may specify "-Name" to "Export-PowerShellData1" in order to add the name of the psd1 to the top of the psd1 file, this is especially useful for input to GPT.
-- Import...
-```
+2. Depend on the circumstance...The, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names, but, for export the, syntax and usage is similar as GPT hallucinated it to be, but without pipeline, as shown below.
+- Import, syntax and usage...
 $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
 
 $Setting1Value = $ConfigData.Setting1
 ```
-- Export...
+- Export, syntax and usage...
 ```
 $data = @{
     Setting1 = 'Value1'
     Setting2 = 'Value2'
 }
 
-$data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
+Export-PowerShellData1 -Data $data -Path 'C:\path\to\your\file.psd1'
 or
-$data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1' -Name
+Export-PowerShellData1 -Data $Global:Config -Path "C:\path\to\your\file.psd1"
+
+Options:
+-Name (comment the name of the file, extracted from -Path details).
 ```
 
 ### NOTATION
