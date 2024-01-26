@@ -10,30 +10,30 @@ Development. Early version, do not use. The principles are...
 ## DESCRIPTION
 Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, therein, every time the given user attemts to use a Psd1 with a script created in GPT4, then it will cause a series of different errors in development to happen, that are frustrating interactions if you intend to use Psd1, hence, I wanted to solve that issue, and not only that, but produce upgrades in the process. ImpExpPsd1-Cl will fix the issue of incorrectly reading/writing to PSD1's with perfected, import and export, functions and cmdlets, that are, robust and efficient, hence, "Import Export Psd1", functions (cmdlets later too) was created for exactly this purpose.
 
-### DEMONSTRATION
-- Some GPT4 logic upon exporting Psd1 files (in a new session - 2024/01/24)...
-```
-WT:
-Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, is this, true or false?
+### FEATURES
+- **Standard Features**: The features you find in the built-in import function, including, hashtables, strings, booleans, arrays. 
+- **Additional Features**: Features you always wanted, comment handling, automatic true/false to boolean converstion, nested object handling, internal convert to psd1 format, improved string handling.
 
-GPT4:
-The statement is false. Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet...
-...
+### Preview
+- Example psd1 file (when using the -Name argument)...
 ```
-- Standard Psd1 import has issues...
-```
-WT:
-Please tell me about the, limitations and issues, of Import-PowerShellDataFile.
+# Script: settings.psd1
 
-GPT4: 
-...
-Handling Complex Data: While it can import nested hashtables or custom objects, the complexity of the data structure can lead to confusion or errors in interpretation.
-...
+@{
+    ArchiveMultithreading = True 
+    UserPreviousScore = "0" 
+    ProcessCharacterTextures = False 
+    GpuCardSelectionNumber = 1 
+    DataFolderLocation = "C:\Program Files (x86)\Steam\steamapps\common\Fallout 4\data" 
+    TargetResolution = 2048 
+    UserCurrentLowScore = "0" 
+    UserCurrentHighScore = "0"
+}
 ```
 
 ## USAGE
 1. Install/Import the, script or cmdlet. 
-2. Depend on the circumstance...The, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names. For export, the, syntax and usage, of the export is as GPT hallucinated it to be, so under such circumstances, it may again be a case of swapping function/cmdlet names.
+2. Depend on the circumstance...The, syntax and usage, of the import will work the same as the built-in one, hence, you just need to swap the cmdlet names. For export, the, syntax and usage, of the export is as GPT hallucinated it to be, so under such circumstances, it may again be a case of swapping function/cmdlet names. Additionally the user may specify "-Name" to "Export-PowerShellData1" in order to add the name of the psd1 to the top of the psd1 file, this is especially useful for input to GPT.
 - Import...
 ```
 $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
@@ -48,10 +48,14 @@ $data = @{
 }
 
 $data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
+or
+$data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1' -Name
 ```
 
 ### NOTATION
 - There is a "Export-PowerShellDataFile" on GitHub, however, mine will be, better than, that cmdlet and the standard "Import-PowerShellDataFile" cmdlet. The GitHub export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
+- GPT4: "Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet..." (hallucination).
+- GPT4: "While Export-PowerShellDataFile can import nested hashtables or custom objects, the complexity of the data structure can lead to confusion or errors in interpretation."
 
 ## DISCLAIMER
 This software is not subject to the terms in my typically supplied License.Txt, as it is NOT an actual program. I want users to use these files HOWEVER they want, I am just trying to fix a blatant FATAL ERROR in PowerShell/PowerShellCore. Obviously if your computer blows up, then you must accept, that is more likely to be the box of TNT yer left on top of it.
