@@ -15,7 +15,7 @@ Powershell and PowerShellCore do not have an Export-PowerShellDataFile cmdlet, t
 - **Additional Features**: The features you always wanted...comment adding/handling, automatic true/false to boolean converstion, nested object handling, internal convert to psd1 format, improved string handling.
 
 ### Preview
-- Example psd1 file (when using the -Name argument)...
+- Example psd1 file (when using export with -Name argument)...
 ```
 # Script: settings.psd1
 
