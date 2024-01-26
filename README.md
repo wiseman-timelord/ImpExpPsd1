@@ -52,7 +52,7 @@ $data = @{
     Setting1 = 'Value1'
     Setting2 = 'Value2'
 }
-$data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
+Export-PowerShellData1 -Data $data -Path 'C:\path\to\your\file.psd1'
 
 Options...
 -Name (comment "# Script: file.psd1", extracted from -Path detail).
