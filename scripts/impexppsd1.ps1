@@ -41,7 +41,6 @@ function Export-PowerShellData1 {
         [Parameter(Mandatory = $true)]
         [string]$Path
     )
-
     process {
         function ConvertTo-Psd1Content {
             param ($Value)
@@ -56,16 +55,21 @@ function Export-PowerShellData1 {
                         ConvertTo-Psd1Content $_
                     }) -join ", " + ")"
                 }
+                { $_ -is [PSCustomObject] } {
+                    $hashTable = @{}
+                    $_.psobject.properties | ForEach-Object { $hashTable[$_.Name] = $_.Value }
+                    ConvertTo-Psd1Content $hashTable
+                }
                 { $_ -is [string] } { "`"$Value`"" }
                 { $_ -is [int] -or $_ -is [long] -or $_ -is [bool] -or $_ -is [double] -or $_ -is [decimal] } { $_ }
-                default { "`"$Value`"" }
+                default { 
+                    "`"$Value`"" 
+                }
             }
         }
-
         $psd1Content = "@{" + ($Data.GetEnumerator() | ForEach-Object {
             "`n    $($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
         }) -join ";" + "`n" + "}"
-
         Set-Content -Path $Path -Value $psd1Content -Force
     }
 }
