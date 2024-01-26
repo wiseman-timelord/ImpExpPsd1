@@ -58,10 +58,6 @@ Options...
 -Name (comment "# Script: file.psd1", extracted from -Path detail).
 ...
 
-Options:
--Name (comment "# Script: file.psd1", extracted from -Path detail).
-```
-
 ### NOTATION
 - There is a "Export-PowerShellDataFile" on GitHub, however, mine will be, better than, that cmdlet and the standard "Import-PowerShellDataFile" cmdlet. The GitHub export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
 - GPT4: "Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet..." (hallucination).
