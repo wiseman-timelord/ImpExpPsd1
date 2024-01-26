@@ -59,7 +59,7 @@ Options...
 ```
 
 ### NOTATION
-- There is a "Export-PowerShellDataFile" on GitHub, however, mine will be, better than, that cmdlet and the standard "Import-PowerShellDataFile" cmdlet. The GitHub export psd cmdlet is [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
+- There is a "Export-PowerShellDataFile" on GitHub [here](https://github.com/rhubarb-geek-nz/PowerShellDataFile/), its v1.0 currently.
 - GPT4: "Both PowerShell and PowerShell Core do include the `Export-PowerShellDataFile` cmdlet..." (hallucination).
 - GPT4: "While Export-PowerShellDataFile can import nested hashtables or custom objects, the complexity of the data structure can lead to confusion or errors in interpretation."
 
