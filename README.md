@@ -3,8 +3,9 @@
 ### STATUS
 Development. Early version, do not use. The principles are...
 - Testing, ensure the cmdlets work for, "PowerShell Core 7" and "Powershell 5.1", ensure everything is compatible.
-- we ideally want them to work more, competently and faster, than the PowerShell/PowerShellCore versions of the relating cmdlets, no security or error handling, the data will be trusted to be, correct from the export and safe (non-executable) from the relating program.
-- we want them to utilize exactly the same, syntax and usage, for import, and a fitting theme of, syntax and usage, for the export, compared to the powershell import.
+- we ideally want them to work more competently than the PowerShell/PowerShellCore versions of the relating cmdlets.
+- Keep things fast, no security or error handling, the data will be trusted to be, correct from the export and safe (non-executable) from the relating program.
+- we want them to utilize exactly the same, syntax and usage, for import, and a fitting theme of, syntax and usage, for the export, compared to the built-in powershell import.
 - after the scripts have been, tested and improved, though use in my programs (starting with [BethScale](https://github.com/wiseman-timelord/DdsBethScale-PsWhile)), then functions will be converted to c# cmdlets, and additionally put on [PowerShellGallery](https://www.powershellgallery.com/packages/). 
 
 ## DESCRIPTION
