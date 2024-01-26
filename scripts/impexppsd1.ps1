@@ -3,22 +3,25 @@
 # Title: Wiseman-Timelords Import/Export Script 
 # Url: https://github.com/wiseman-timelord/ImpExpPsd1-Ps
 #
-# Import Syntax:
+# Import, usage & syntax:
 # $ConfigData = Import-PowerShellData1 -Path "C:\path\to\config.psd1"
-#
-# Import Usage:
 # $Setting1Value = $ConfigData.Setting1
 #
-# Export Syntax: 
+# Export, syntax and usage:
+#
+# Using global with hashtable import...
+# $Global:Config = Import-PowerShellData1 -Path "C:\path\to\your\file.psd1"
+# Export-PowerShellData1 -Data $Global:Config -Path "C:\path\to\your\file.psd1"
+#
+# Using hashtable...
 # $data = @{
 #     Setting1 = 'Value1'
 #     Setting2 = 'Value2'
 # }
-#
-# Export Usage:
 # $data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1'
-# or
-# $data | Export-PowerShellData1 -Path 'C:\path\to\your\file.psd1' -Name
+#
+# Options...
+# -Name (comment "# Script: file.psd1", extracted from -Path detail).
 
 # Function Import Psd1
 function Import-PowerShellData1 {
@@ -27,11 +30,12 @@ function Import-PowerShellData1 {
     )
     $content = Get-Content -Path $Path -Raw
     $content = $content -replace '^(#.*[\r\n]*)+', '' # Remove lines starting with '#'
-    $content = $content -replace '\bTrue\b', '$true' -replace '\bFalse\b', '$false'
+    $content = $content -replace '(?<!\$)\bTrue\b', '$true' -replace '(?<!\$)\bFalse\b', '$false'
     $scriptBlock = [scriptblock]::Create($content)
     $data = . $scriptBlock
     return $data
 }
+
 
 # Function Export Psd1
 function Export-PowerShellData1 {
@@ -42,37 +46,37 @@ function Export-PowerShellData1 {
         [string]$Path,
         [switch]$Name
     )
+
     function ConvertTo-Psd1Content {
         param ($Value)
         switch ($Value) {
             { $_ -is [System.Collections.Hashtable] } {
-                "@{" + ($Value.GetEnumerator() | ForEach-Object {
+                $innerContent = $Value.GetEnumerator() | ForEach-Object {
                     "`n    $($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
-                }) -join ";" + "`n}" + "`n"
+                }
+                return "@{$innerContent`n}"
             }
             { $_ -is [System.Collections.IEnumerable] -and $_ -isnot [string] } {
-                "@(" + ($Value | ForEach-Object {
-                    ConvertTo-Psd1Content $_
-                }) -join ", " + ")"
+                $arrayContent = $Value | ForEach-Object { ConvertTo-Psd1Content $_ }
+                return "@($arrayContent -join ', ')"
             }
             { $_ -is [PSCustomObject] } {
                 $hashTable = @{}
                 $_.psobject.properties | ForEach-Object { $hashTable[$_.Name] = $_.Value }
-                ConvertTo-Psd1Content $hashTable
+                return ConvertTo-Psd1Content $hashTable
             }
-            { $_ -is [string] } { "`"$Value`"" }
-            { $_ -is [int] -or $_ -is [long] -or $_ -is [bool] -or $_ -is [double] -or $_ -is [decimal] } { $_ }
-            default { 
-                "`"$Value`"" 
-            }
+            { $_ -is [string] } { return "`"$Value`"" }
+            { $_ -is [int] -or $_ -is [long] -or $_ -is [bool] -or $_ -is [double] -or $_ -is [decimal] } { return $_.ToString() }
+            default { return "`"$Value`"" }
         }
     }
+
     $fileName = if ($Name) { Split-Path $Path -Leaf } else { $null }
     $psd1Content = if ($fileName) { "# Script: $fileName`n`n" } else { "" }
-    $psd1Content += "@{" + ($Data.GetEnumerator() | ForEach-Object {
-        "`n    $($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
-    }) -join ";" + "`n" + "}"
+    $psd1Content += "@{"
+    $Data.GetEnumerator() | ForEach-Object {
+        $psd1Content += "`n    $($_.Key) = $(ConvertTo-Psd1Content $_.Value)"
+    }
+    $psd1Content += "`n}"
     Set-Content -Path $Path -Value $psd1Content -Force
 }
-
-
