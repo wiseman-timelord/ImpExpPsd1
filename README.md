@@ -55,6 +55,8 @@ Export-PowerShellData1 -Data $data -Path 'C:\path\to\your\file.psd1'
 
 Export-PowerShellData1 -Data $Global:Config -Path "C:\path\to\your\file.psd1"
 
+...
+
 Options:
 -Name (comment name of file, extracted from -Path detail).
 ```
